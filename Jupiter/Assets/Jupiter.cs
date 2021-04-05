@@ -75,6 +75,8 @@ public class Jupiter : MonoBehaviour {
             B1();
             break;
       }
+      CurrentNumber += Visits;
+      Debug.LogFormat("[Jupiter #{0}] Adding the visits to the current value gives you a final value of {1}.", moduleId, CurrentNumber);
    }
 
    void Update () {
@@ -821,7 +823,7 @@ public class Jupiter : MonoBehaviour {
       if (CurrentNumber > 0) {
          CurrentNumber %= 10;
       }
-      Debug.LogFormat("[Jupiter #{0}] You have visited the goal node, ending with {1} in {2} visits.", moduleId, CurrentNumber, Visits, Visits);
+      Debug.LogFormat("[Jupiter #{0}] You have visited the goal node, ending with {1} in {2} visits.", moduleId, CurrentNumber, Visits);
    }
 
    void D3 () {
@@ -850,7 +852,7 @@ public class Jupiter : MonoBehaviour {
          Debug.LogFormat("[Jupiter #{0}] Going to F2.", moduleId);
          F2();
       }
-      else if (Calculate("F")) {
+      else if (Calculate("A")) {
          Debug.LogFormat("[Jupiter #{0}] Going to goal.", moduleId);
          Goal();
       }
