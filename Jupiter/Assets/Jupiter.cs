@@ -17,7 +17,9 @@ public class Jupiter : MonoBehaviour {
    public GameObject StatusLightPosition;
 
    int CurrentNumber;
+   int MoonCount;
    int RotationAmount;
+   int SunCount;
    int Visits;
 
    string PreviousConnector = "";
@@ -25,9 +27,11 @@ public class Jupiter : MonoBehaviour {
    string PreviousOrbital = "";
    string PreviousStandard = "";
 
-   bool Visible = true;
    bool BottomClockwise;
    bool FrontClockwise;
+   bool Ran;
+   bool Unicorn;
+   bool Visible = true;
 
    static int moduleIdCounter = 1;
    int moduleId;
@@ -73,7 +77,34 @@ public class Jupiter : MonoBehaviour {
       }
    }
 
+   void Update () {
+      if (Ran) {
+         return;
+      }
+      if (Bomb.GetSolvableModuleNames().Count() != 0) {
+         for (int i = 0; i < Bomb.GetSolvableModuleNames().Count(); i++) {
+            if (Bomb.GetSolvableModuleNames().ToArray()[i] == "The Moon") {
+               MoonCount++;
+            }
+            else if (Bomb.GetSolvableModuleNames().ToArray()[i] == "The Sun") {
+               SunCount++;
+            }
+         }
+         if (MoonCount == 79 && SunCount == 1) {
+            Unicorn = true;
+         }
+         Ran = true;
+         Debug.Log(Ran);
+      }
+   }
+
    void JupterPress () {
+      if (Unicorn) {
+         Debug.LogFormat("[Jupiter #{0}] Why would you load a bomb with 79 Moons, a Sun, and Jupiter?", moduleId);
+         GetComponent<KMBombModule>().HandlePass();
+         moduleSolved = true;
+         return;
+      }
       if ((int) Bomb.GetTime() % 10 == Math.Abs(CurrentNumber % 10)) {
          Debug.LogFormat("[Jupiter #{0}] You pressed on the correct time, module disarmed.", moduleId);
          GetComponent<KMBombModule>().HandlePass();
