@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33984400645953456}
   - component: {fileID: 65528632909524690}
   - component: {fileID: 23732847208516536}
+  - component: {fileID: 114004160607012360}
   m_Layer: 0
   m_Name: Backing
   m_TagString: Untagged
@@ -177,6 +178,7 @@ GameObject:
   - component: {fileID: 135045189305153692}
   - component: {fileID: 23396145640521570}
   - component: {fileID: 114619631916584806}
+  - component: {fileID: 114000122655837904}
   m_Layer: 0
   m_Name: HideButton
   m_TagString: Untagged
@@ -343,6 +345,7 @@ GameObject:
   - component: {fileID: 4627445739172966}
   - component: {fileID: 33792558245284820}
   - component: {fileID: 23710127111529236}
+  - component: {fileID: 114335356435126844}
   m_Layer: 0
   m_Name: LightBase
   m_TagString: Untagged
@@ -362,6 +365,7 @@ GameObject:
   - component: {fileID: 135757930983315946}
   - component: {fileID: 23685328096550546}
   - component: {fileID: 114977675112177516}
+  - component: {fileID: 114308809595168408}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -1231,6 +1235,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114000122655837904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323809365779616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/DiffuseTint
+--- !u!114 &114004160607012360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1020103096184710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114059903702469760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1309,6 +1339,32 @@ MonoBehaviour:
   AllowSelectionWrapY: 0
   ForceSelectionHighlight: 0
   ForceInteractionHighlight: 0
+--- !u!114 &114308809595168408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1876663907556358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/DiffuseTint
+--- !u!114 &114335356435126844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812248056403662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - KT/Mobile/DiffuseTint
 --- !u!114 &114342787415708478
 MonoBehaviour:
   m_ObjectHideFlags: 1

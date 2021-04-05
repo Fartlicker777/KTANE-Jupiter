@@ -11,10 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: template
-  title: Template
-  author: 
-  description: 
+  id: Jupiter
+  title: Jupiter
+  author: me
+  description: "Judgement will now be passed, will you be favored by the gas giant?\r\n\r\nFollow
+    a chart based and press Jupiter at a specific time.\n\nManual can be found at
+    ktane.timwi.de\n\nIf there are any bugs, contact Fartlicker777#9169 on Discord."
   version: 
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 1328343c0c330964dab53a19f9e5c28e, type: 3}
