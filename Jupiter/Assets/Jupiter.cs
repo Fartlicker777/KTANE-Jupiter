@@ -47,13 +47,14 @@ public class Jupiter : MonoBehaviour {
    }
 
    void Start () {
-      BottomClockwise = Random.Range(0, 2) == 0 ? true : false;
+      BottomClockwise = Random.Range(0, 2) == 0;
       Debug.LogFormat("[Jupiter #{0}] From the bottom, Jupiter is rotating {1}.", moduleId, BottomClockwise ? "clockwise" : "counter-clockwise");
-      FrontClockwise = Random.Range(0, 2) == 0 ? true : false;
+      FrontClockwise = Random.Range(0, 2) == 0;
       Debug.LogFormat("[Jupiter #{0}] From the front, Jupiter is rotating {1}.", moduleId, FrontClockwise ? "clockwise" : "counter-clockwise");
       Coroutine PlanetRotating = StartCoroutine(PlanetRotation());
       CurrentNumber = Bomb.GetSerialNumberNumbers().ToArray().Sum();
-      RotationAmount = Random.Range(0, 4);
+      //RotationAmount = Random.Range(0, 4);
+      RotationAmount = 3;
       StatusLightPosition.transform.localEulerAngles += new Vector3(0, (float) (90 * RotationAmount), 0);
       string[] TempLog = { "top right", "bottom right", "bottom left", "top left" };
       Debug.LogFormat("[Jupiter #{0}] The status light is {1}.", moduleId, TempLog[RotationAmount]);
@@ -435,7 +436,7 @@ public class Jupiter : MonoBehaviour {
          return;
       }
       Debug.LogFormat("[Jupiter #{0}] At the {2}th visit, the current number is {1} at B1.", moduleId, CurrentNumber, Visits);
-      if (Calculate("A")) {
+      if (Calculate("B")) {
          PreviousStandard = PreviousNode = "B1";
          switch (PositionOfLastOrbital(PreviousOrbital)) {
             case "TL":
@@ -473,13 +474,13 @@ public class Jupiter : MonoBehaviour {
       }
       else {
          PreviousStandard = PreviousNode = "B1";
-         if (PreviousConnector == "B2") {
-            Debug.LogFormat("[Jupiter #{0}] Going to B2.", moduleId);
-            B2();
-         }
-         else {
+         if (PreviousConnector == "D1") {
             Debug.LogFormat("[Jupiter #{0}] Going to D1.", moduleId);
             D1();
+         }
+         else {
+            Debug.LogFormat("[Jupiter #{0}] Going to B2.", moduleId);
+            B2();
          }
       }
    }
